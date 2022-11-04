@@ -31,6 +31,7 @@ const Create = () => {
     <Fragment>
       <Header />
       <card>
+        <form action="" onsubmit={handleSubmit}>
         <div className="centerDiv">
             <label htmlFor="fname">Name</label>
             <br />
@@ -42,6 +43,7 @@ const Create = () => {
               defaultValue="John"
               value={name}
               onChange={(e)=>{setName(e.target.value)}}
+              required
             />
             <br />
             <label htmlFor="fname">Category</label>
@@ -54,6 +56,7 @@ const Create = () => {
               defaultValue="John"
               value={category}
               onChange={(e)=>{setCategory(e.target.value)}}
+              required
             />
             <br />
             <label htmlFor="fname">Price</label>
@@ -65,11 +68,11 @@ const Create = () => {
           <img alt="Posts" width="200px" height="200px" src={image?URL.createObjectURL(image):''}></img>
           
             <br />
-            <input type="file" onChange={(e)=>{setImage(e.target.files[0])}}/>
+            <input required type="file" onChange={(e)=>{setImage(e.target.files[0])}}/>
             <br />
-            <button onClick={handleSubmit} className="uploadBtn">upload and Submit</button>
+            <button type='submit' className="uploadBtn">upload and Submit</button>
          
-        </div>
+        </div></form>
       </card>
     </Fragment>
   );
