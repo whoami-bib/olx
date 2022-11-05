@@ -31,8 +31,8 @@ const Create = () => {
     <Fragment>
       <Header />
       <card>
-        <form action="" onsubmit={handleSubmit}>
         <div className="centerDiv">
+          
             <label htmlFor="fname">Name</label>
             <br />
             <input
@@ -68,11 +68,11 @@ const Create = () => {
           <img alt="Posts" width="200px" height="200px" src={image?URL.createObjectURL(image):''}></img>
           
             <br />
-            <input required type="file" onChange={(e)=>{setImage(e.target.files[0])}}/>
+            <input type="file" onChange={(e)=>{setImage(e.target.files[0])}}/>
             <br />
-            <button type='submit' className="uploadBtn">upload and Submit</button>
-         
-        </div></form>
+            <button onClick={handleSubmit} className="uploadBtn">upload and Submit</button>
+            
+        </div>
       </card>
     </Fragment>
   );
